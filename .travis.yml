@@ -32,9 +32,9 @@ install:
       if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install libhunspell-dev hunspell;elif [ $TRAVIS_OS_NAME = osx ];
       then sudo mkdir /Library/Spelling/;echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bash_profile;
       wget https://iweb.dl.sourceforge.net/project/wordlist/speller/2019.10.06/hunspell-en_US-2019.10.06.zip; 
-      unzip hunspell-en_US-2019.10.06; sudo mv en_US.dic en_US.aff /Library/Spelling; brew install hunspell; 
+      unzip hunspell-en_US-2019.10.06; sudo mv en_US.dic en_US.aff /Library/Spelling; brew install hunspell@1.6.2; 
       export C_INCLUDE_PATH=/usr/local/include/hunspell;
-      ln -s /usr/local/lib/libhunspell-1.7.a /usr/local/lib/libhunspell.a;
+      ln -s /usr/local/lib/libhunspell-1.6.2.a /usr/local/lib/libhunspell.a;
       pip install hunspell;fi;
       pip install -r requirements.txt;
       python -m spacy download en;
