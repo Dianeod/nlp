@@ -146,7 +146,7 @@ rmv_custom:regex.rmv_custom
 rmv_master:regex.rmv_master
 
 // Detect language from text
-detectLang:{[text]`$.p.import[`langid][`:classify;<][raze text]0}
+detectLang:{[text]`$.p.import[`langdetect][`:detect;<][text]}
 
 // Import all files in a dir recursively
 loadTextFromDir:{[fp]
