@@ -38,11 +38,12 @@ install:
       export PKG_CONFIG_PATH="/usr/local/opt/gettext/lib/pkgconfig"
       export LDFLAGS="-L/usr/local/opt/readline/lib";
       export CPPFLAGS="-I/usr/local/opt/readline/include";
+      CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell
       export C_INCLUDE_PATH=/usr/local/include/hunspell
       export C_INCLUDE_PATH=/usr/local/Cellar/hunspell; 
       ln -s /usr/local/lib/libhunspell-1.7.a /usr/local/lib/libhunspell.a;
       ln -s /usr/local/Cellar/hunspell/1.7.0_2/lib/libhunspell-1.7.dylib /usr/local/Cellar/hunspell/1.7.0_2/lib/libhunspell.dylib;
-      CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell; fi;
+      fi;
       pip install -r requirements.txt;
       python -m spacy download en;
     fi
