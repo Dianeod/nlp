@@ -1,5 +1,5 @@
 numpy
 beautifulsoup4
+langdetect
 spacy
 spacy_hunspell
-langdetect
