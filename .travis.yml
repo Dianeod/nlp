@@ -34,15 +34,8 @@ install:
       wget https://iweb.dl.sourceforge.net/project/wordlist/speller/2019.10.06/hunspell-en_US-2019.10.06.zip; 
       unzip hunspell-en_US-2019.10.06; sudo mv en_US.dic en_US.aff /Library/Spelling; brew install hunspell; 
       export C_INCLUDE_PATH=/usr/local/include/hunspell;
-      ls /usr/local/lib/;
-      ls  /usr/local/Cellar/hunspell/;
-      mv /usr/local/lib/libhunspell-1.7.a /usr/local/lib/libhunspell-1.6.2.a
-      ln -s /usr/local/lib/libhunspell-1.6.2.a /usr/local/lib/libhunspell.a;
-      mkdir /usr/local/Cellar/hunspell/1.6.2;
-      mkdir /usr/local/Cellar/hunspell/1.6.2/lib;
-      mv /usr/local/Cellar/hunspell/1.7.0_2/lib/libhunspell-1.7.dylib /usr/local/Cellar/hunspell/1.6.2/lib/libhunspell-1.6.2.dylib;
-      ln -s /usr/local/Cellar/hunspell/1.6.2/lib/libhunspell-1.7.dylib /usr/local/Cellar/hunspell/1.6.2/lib/libhunspell.dylib;
-      pip install hunspell; fi;
+      ln -s /usr/local/lib/libhunspell-1.7.a /usr/local/lib/libhunspell.a;
+      CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell;fi;
       pip install -r requirements.txt;
       python -m spacy download en;
     fi
