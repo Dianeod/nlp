@@ -38,7 +38,7 @@ install:
       sudo ln -sf /usr/local/lib/libhunspell-1.7.a /usr/local/lib/libhunspell.a;
       sudo ln -sf /usr/local/Cellar/hunspell/1.7.0_2/lib/libhunspell-1.7.dylib /usr/local/Cellar/hunspell/1.7.0_2/lib/libhunspell.dylib;
       echo $(pkg-config --cflags hunspell); echo $(pkg-config --libs hunspell);
-      CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell;fi;
+      CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell==0.5.0;fi;
       pip install -r requirements.txt;
       python -m spacy download en;
     fi
