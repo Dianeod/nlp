@@ -1,4 +1,5 @@
 if defined QLIC_KC (
+        apt-get install libhunspell-dev
         pip install hunspell
         pip -q install -r requirements.txt
         python -m spacy download en
