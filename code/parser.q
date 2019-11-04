@@ -83,7 +83,7 @@ parser.i.newSubParser:{[lang;opts;disabled]
   if[`sbd in opts;model[`:add_pipe]$[`~chklng;model[`:create_pipe;`sentencizer];.p.pyget `x_sbd]];
   if[`spell in opts;if[not .p.import[`spacy.tokens][`:Token][`:has_extension]["hunspell_spell"]`;
    sphun:.p.import[`spacy_hunspell]`:spaCyHunSpell;hunspell:sphun[model;
-   $[`Darwin~syst:0N!`$.p.import[`platform][`:system][]`;`mac;lower syst]];model[`:add_pipe]hunspell]];  
+   $[`Darwin~syst:`$.p.import[`platform][`:system][]`;`mac;lower syst]];model[`:add_pipe]hunspell]];  
  model}
 
 / Operations that must be done in q, or give better performance in q
